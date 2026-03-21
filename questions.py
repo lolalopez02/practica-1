@@ -1,14 +1,14 @@
 import random
-words = [
-    "python",
-    "programa",
-    "variable",
-    "funcion",
-    "bucle",
-    "cadena",
-    "entero",
-    "lista",
-]
+categories = {
+    "tipos" : ["cadena","entero","lista"],
+    "codigo" : ["python","programa"],
+    "control" : ["variable","funcion","bucle"]
+}
+print("Categorias disponibles:")
+for category in categories:
+    print (category)
+chosen_category = input ("Elija una categoria").lower()
+words= categories [chosen_category]
 word = random.choice(words)
 guessed = []
 attempts = 6
