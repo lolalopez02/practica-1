@@ -10,7 +10,7 @@ while True:
     print("Categorias disponibles:")
     for category in categories:
         print (category)
-    chosen_category = input ("Elija una categoria").lower()
+    chosen_category = input ("Elija una categoria").lower().strip()
     available_words = [word for word in categories[chosen_category] if word not in used_words]
     if not available_words:
         print("No quedan palabras disponibles. Elija otra categoria")
@@ -39,7 +39,7 @@ while True:
         print(f"Intentos restantes: {attempts}")
         print(f"Letras usadas: {', '.join(guessed)}")
 
-        letter = input("Ingresá una letra: ").lower()
+        letter = input("Ingresá una letra: ").lower().strip()
     
         if len(letter) != 1 or not letter.isalpha():
             print("Entrada no valida")
@@ -63,5 +63,5 @@ while True:
     play_again = input ("¿Volver a jugar? ingrese si o no: ").lower ()
     if play_again != "si":
         break
-print(f"juego terminado!. Puntaje total {total_score}")
+print(f"juego terminado!. Puntaje total: {total_score}")
 
