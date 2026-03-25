@@ -11,6 +11,9 @@ while True:
     for category in categories:
         print (category)
     chosen_category = input ("Elija una categoria").lower().strip()
+    if chosen_category not in categories:
+        print("Esa categoria no existe, elija otra")
+        continue
     available_words = [word for word in categories[chosen_category] if word not in used_words]
     if not available_words:
         print("No quedan palabras disponibles. Elija otra categoria")
